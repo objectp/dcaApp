@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--<?php //require_once('init.php');?>-->
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    
+    <body onload="JavaScript:AutoRefresh(100000);" >
+
+        
+        <div class="container">
+            
+           <div ng-app="arrivalsModule" ng-controller="arrivalsController">
+               
+                <div class="row"> 
+                    <div class="col-sm-12">   
+                             <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--<tr ng-repeat="(key, value) in arrivalsArray.codesTerminalsTimes">
+                                        <td><strong><a ng-href="{{ arrivalsArray.codeUrls[$index]}}"> {{ key }} </a></strong></td>
+                                        <td>{{value}}</td>
+                                    </tr>-->
+                                   <tr ng-repeat="code in arrivalsArray.codesAndTerminals">
+                                        <td><strong><a ng-href="{{ arrivalsArray.codeUrls[$index]}}"> {{ code }} </a></strong></td>
+                                        <td>{{ arrivalsArray.timeElapses[$index] }}</td>
+                                        <td>{{ arrivalsArray.flightTimes[$index] }}</td>
+
+
+                                    </tr> 
+
+                                </tbody>
+                             </table>  
+                    </div>
+                </div>
+
+
+             <!-- <div class="jumbotron">
+                <h1>My First Bootstrap Page</h1>
+                <p>Resize this responsive page to see the effect!</p> 
+              </div>-->
+                <div class="row" > 
+                    <div class="col-sm-3">
+                        T1: {{arrivalsArray.persentage1}}<br>
+                        T2: {{arrivalsArray.persentage2}}<br>
+                        T3: {{arrivalsArray.persentage3}}<br>
+                        T4: {{arrivalsArray.persentage4}}
+                    </div>
+
+                </div>
+            
+            </div>
+             
+            <div id="enroutesDiv" ng-controller="enroutesController">
+                    <div class="col-sm-9">
+                            <h2>En route: {{ statuscode }} </h2>
+
+                            <div ng-repeat="time in enroutesArray">
+
+                                {{ time }}  <br>
+                            </div>
+                    </div>
+             </div>
+            
+        </div>
+
+    
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--AngualrJs framework-->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <!--AngularJS script-->
+        <script src="javascript/angularJsScript.js"></script>
+        <!--Javascript Page out refresh-->
+        <script type="text/JavaScript">
+                function AutoRefresh( t ) {setTimeout("location.reload(true);", t);}
+            
+        </script>
+
+    </body>
+</html>

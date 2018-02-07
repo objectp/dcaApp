@@ -1,0 +1,12 @@
+
+#one {
+    color: blue;
+    font-family: verdana;
+    font-size: 200%;
+}
+.st{
+    color: green;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
